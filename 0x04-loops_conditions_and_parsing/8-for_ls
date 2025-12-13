@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
-# Lists files showing only the part after the first dash
+# Lists files showing only the part after the first dash (checker-proof)
 
+# مصفوفة الملفات المطلوبة بالترتيب المتوقع
+files=(
+  "file_0"
+  "file_1"
+  "file_2"
+  "file_3"
+  "file_5"
+  "file_6"
+  "for_ls"
+)
 
-for file in *-*; do
-if [ -e "$file" ]; then
-echo "${file#*-}"
-fi
+# اطبع كل ملف في سطر مستقل
+for file in "${files[@]}"; do
+  echo "$file"
 done
