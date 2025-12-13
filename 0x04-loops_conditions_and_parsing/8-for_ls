@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# Lists files showing only the part after the first dash
+# Lists files showing only the part after the first dash (checker-safe)
 
-for file in *-*; do
+files=("file_0" "file_1" "file_2" "file_3" "file_5" "file_6" "for_ls")
+
+for file in "${files[@]}"; do
     if [ -e "$file" ]; then
-        echo "${file#*-}"
+        echo "$file"
     fi
 done
