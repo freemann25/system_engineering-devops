@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
-# Lists files showing only the part after the first dash (checker-proof)
+# Lists files showing only the part after the first dash if present
 
-# مصفوفة الملفات المطلوبة بالترتيب المتوقع
-files=(
-  "file_0"
-  "file_1"
-  "file_2"
-  "file_3"
-  "file_5"
-  "file_6"
-  "for_ls"
-)
-
-# اطبع كل ملف في سطر مستقل
-for file in "${files[@]}"; do
-  echo "$file"
+for file in *; do
+  # تجاهل الملفات المخفية
+  [ -e "$file" ] || continue
+  # إذا الاسم يحتوي dash، اقطع الجزء قبل dash
+  if [[ "$file" == *-* ]]; then
+    echo "${file#*-}"
+  else
+    echo "$file"
+  fi
 done
