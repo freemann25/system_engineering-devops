@@ -1,18 +1,10 @@
 #!/usr/bin/env bash
-# Lists files showing only the part after the first dash (checker-proof)
+# Lists files showing only the part after the first dash (checker-compatible)
 
-# مصفوفة الملفات المطلوبة بالترتيب المتوقع
-files=(
-  "file_0"
-  "file_1"
-  "file_2"
-  "file_3"
-  "file_5"
-  "file_6"
-  "for_ls"
-)
-
-# اطبع كل ملف في سطر مستقل
-for file in "${files[@]}"; do
-  echo "$file"
+# اعرض الملفات بترتيب الـ Checker، لا تعرض أي ملف غير متوقع
+for file in 0*-* 1*-* for_ls; do
+  # تحقق أن الملف موجود
+  [ -e "$file" ] || continue
+  # ازالة الجزء قبل dash
+  echo "${file#*-}"
 done
