@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Script that traps SIGTERM and refuses to die
 
-# Trap SIGTERM (15) and print the message
 trap 'echo "I am invincible!!!"' SIGTERM
 
 while true
