@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Displays a list of currently running processes
+# Displays running processes with user, start time, and command
 
-ps -aux
+ps -eo user,start,command
