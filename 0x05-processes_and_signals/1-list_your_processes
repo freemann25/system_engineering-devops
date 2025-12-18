@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Displays only the user running the process
+# Displays running processes with USER, START time, and COMMAND
 
-ps -eo user --no-headers | head -n 1
+ps -eo user,start,comm
