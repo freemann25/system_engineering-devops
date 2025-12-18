@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Displays the PID of the bash process
 
-pgrep bash
+pgrep -l bash | awk '{print $1, $2}'
