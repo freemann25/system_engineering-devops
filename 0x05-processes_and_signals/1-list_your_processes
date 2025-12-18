@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Displays running processes with USER, START time, and COMMAND
 
-ps -eo user,start,comm
+ps auxf
