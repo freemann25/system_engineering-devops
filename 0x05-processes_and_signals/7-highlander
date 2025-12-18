@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# Infinite loop that prints a message and reacts to SIGTERM
+# Script that traps SIGTERM and refuses to die
 
-trap 'echo "I am invincible!!!"; echo OK' SIGTERM
+# Trap SIGTERM (15) and print the message
+trap 'echo "I am invincible!!!"' SIGTERM
 
-while true; do
-  echo "To infinity and beyond"
-  sleep 2
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
 done
